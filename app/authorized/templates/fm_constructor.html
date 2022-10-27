@@ -1,0 +1,1460 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Конструктор БП {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Конструктор Финансовых Моделей</h5>
+                        </div>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="javascript:">Сервисы</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:">Конструктор Финансовых Моделей</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- [ Main Content ] start -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h5 class="mt-4">Структура Финансовой Модели</h5>
+                        <hr>
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="false">Начальные инвестиции</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Зарплаты</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Постоянные затраты</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-team-tab" data-toggle="pill" href="#pills-team" role="tab" aria-controls="pills-team" aria-selected="false">Переменные затраты</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-realization-tab" data-toggle="pill" href="#pills-realization" role="tab" aria-controls="pills-realization" aria-selected="false">Продажи</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-finances-tab" data-toggle="pill" href="#pills-finances" role="tab" aria-controls="pills-finances" aria-selected="false">Отчет о прибылях и убытках</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-conclusion-tab" data-toggle="pill" href="#pills-conclusion" role="tab" aria-controls="pills-conclusion" aria-selected="true">Финансовые показатели</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                
+                                        
+                                        
+                                        <form role="form" method="post" action="{{ url_for('authorized_blueprint.initial_investments_data_saver') }}">
+                                            {{ form.hidden_tag() }} 
+                                            <div class="row">
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment_name0.label(class="form-control-label") }}
+                                                        {{ form.investment_name0(class="form-control") }}
+                                                                                             
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        {{ form.investment0.label(class="form-control-label") }}
+                                                        {{ form.investment0(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                      
+                                                        {{ form.investment_name1(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.investment1(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment_name2(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment2(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment_name3(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment3(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.investment_name4(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment4(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment_name5(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment5(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment_name6(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment6(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.investment_name7(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment7(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment_name8(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment8(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment_name9(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment9(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment_name10(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment10(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment_name11(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment11(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment_name12(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment12(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment_name13(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment13(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment_name14(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.investment14(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                            <button type="submit" name="bp_submit" value="bp_submit" class="btn btn-primary">Сохранить</button>      
+                                        </form>
+
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                        <form role="form" method="post" action="{{ url_for('authorized_blueprint.salaries_data_saver') }}">
+                                            {{ form.hidden_tag() }} 
+                                            <div class="row">
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.employee_position0.label(class="form-control-label") }}
+                                                        {{ form.employee_position0(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        {{ form.employee_salary0.label(class="form-control-label") }}
+                                                        {{ form.employee_salary0(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.employee_position1(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.employee_salary1(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.employee_position2(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.employee_salary2(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.employee_position3(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.employee_salary3(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.employee_position4(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.employee_salary4(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.employee_position5(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.employee_salary5(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.employee_position6(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.employee_salary6(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.employee_position7(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.employee_salary7(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.employee_position8(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.employee_salary8(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.employee_position9(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.employee_salary9(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.employee_position10(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.employee_salary10(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.employee_position11(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.employee_salary11(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.employee_position12(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.employee_salary12(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.employee_position13(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.employee_salary13(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.employee_position14(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.employee_salary14(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+        
+                                            <button type="submit" name="bp_submit" value="bp_submit" class="btn btn-primary">Сохранить</button>      
+                                        </form>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                        <form role="form" method="post" action="{{ url_for('authorized_blueprint.permanent_expenditures_data_saver') }}">
+                                            {{ form.hidden_tag() }} 
+                                            <div class="row">
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.permanent_expenditure_name0.label(class="form-control-label") }}
+                                                        {{ form.permanent_expenditure_name0(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        {{ form.permanent_expenditure0.label(class="form-control-label") }}
+                                                        {{ form.permanent_expenditure0(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.permanent_expenditure_name1(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.permanent_expenditure1(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.permanent_expenditure_name2(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.permanent_expenditure2(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.permanent_expenditure_name3(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.permanent_expenditure3(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.permanent_expenditure_name4(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.permanent_expenditure4(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.permanent_expenditure_name5(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.permanent_expenditure5(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.permanent_expenditure_name6(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.permanent_expenditure6(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.permanent_expenditure_name7(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.permanent_expenditure7(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.permanent_expenditure_name8(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.permanent_expenditure8(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.permanent_expenditure_name9(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.permanent_expenditure9(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.permanent_expenditure_name10(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.permanent_expenditure10(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.permanent_expenditure_name11(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.permanent_expenditure11(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.permanent_expenditure_name12(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.permanent_expenditure12(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.permanent_expenditure_name13(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.permanent_expenditure13(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.permanent_expenditure_name14(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.permanent_expenditure14(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+        
+        
+                                            <button type="submit" name="bp_submit" value="bp_submit" class="btn btn-primary">Сохранить</button>      
+                                        </form>
+                                    </div>
+
+
+                                    <div class="tab-pane fade" id="pills-team" role="tabpanel" aria-labelledby="pills-team-tab">
+                                        <form role="form" method="post" action="{{ url_for('authorized_blueprint.variable_expenditures_data_saver') }}">
+                                            {{ form.hidden_tag() }} 
+                                            <div class="row">
+                                                <div class="col-md-12">                                            
+                                                    <div class="form-group mb-4">
+                                                        {{ form.product1_name.label(class="form-control-label") }}
+                                                        {{ form.product1_name(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name0.label(class="form-control-label") }}
+                                                        {{ form.variable_expenditure_name0(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        {{ form.variable_expenditure0.label(class="form-control-label") }}
+                                                        {{ form.variable_expenditure0(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name1(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure1(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name2(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure2(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name3(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure3(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name4(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure4(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name5(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure5(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name6(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure6(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name7(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure7(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name8(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure8(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name9(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure9(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name10(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure10(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name11(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure11(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name12(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure12(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name13(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure13(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name14(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure14(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+
+                                            <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                                            
+                                            <br>
+                                            <br>
+                                            <br>
+
+                                            <div class="row">
+                                                <div class="col-md-12">                                            
+                                                    <div class="form-group mb-4">
+                                                        {{ form.product2_name.label(class="form-control-label") }}
+                                                        {{ form.product2_name(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+
+
+
+                                            <div class="row">
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name15.label(class="form-control-label") }}
+                                                        {{ form.variable_expenditure_name15(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        {{ form.variable_expenditure15.label(class="form-control-label") }}
+                                                        {{ form.variable_expenditure15(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name16(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure16(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name17(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure17(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name18(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure18(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name19(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure19(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name20(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure20(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name21(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure21(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name22(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure22(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name23(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure23(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name24(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure24(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name25(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure25(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name26(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure26(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name27(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure27(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name28(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure28(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.variable_expenditure_name29(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                       
+                                                        {{ form.variable_expenditure29(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+
+        
+        
+                                            <button type="submit" name="bp_submit" value="bp_submit" class="btn btn-primary">Сохранить</button>      
+                                        </form>
+                                    </div>
+
+
+
+                                    
+                                    <div class="tab-pane fade" id="pills-realization" role="tabpanel" aria-labelledby="pills-realization-tab">
+                                        <form role="form" method="post" action="{{ url_for('authorized_blueprint.sales_data_saver') }}">
+                                            {{ form.hidden_tag() }} 
+                                            
+        
+                                            <div class="row">
+                                                <div class="col-md-12">                                             
+                                                    <div class="form-group mb-4">
+                                                        {{ form.product1_price.label(class="form-control-label") }}
+                                                        {{ form.product1_price(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-12">                                             
+                                                    <div class="form-group mb-4">
+                                                        {{ form.product1_expenditure_increase.label(class="form-control-label") }}
+                                                        {{ form.product1_expenditure_increase(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+
+
+                                            <div class="row">
+                                                <div class="col-md-12">                                             
+                                                    <div class="form-group mb-4">
+                                                        {{ form.product1_sales.label(class="form-control-label") }}
+                                                        {{ form.product1_sales(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+
+
+                                            <div class="row">
+                                                <div class="col-md-12">                                             
+                                                    <div class="form-group mb-4">
+                                                        {{ form.product1_sales_increase.label(class="form-control-label") }}
+                                                        {{ form.product1_sales_increase(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+
+
+
+
+
+
+
+                                            <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                                            
+                                            <br>
+                                            <br>
+                                            <br>
+
+
+
+
+
+
+
+
+
+
+                                            <div class="row">
+                                                <div class="col-md-12">                                             
+                                                    <div class="form-group mb-4">
+                                                        {{ form.product2_price.label(class="form-control-label") }}
+                                                        {{ form.product2_price(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+
+
+
+                                            <div class="row">
+                                                <div class="col-md-12">                                             
+                                                    <div class="form-group mb-4">
+                                                        {{ form.product2_expenditure_increase.label(class="form-control-label") }}
+                                                        {{ form.product2_expenditure_increase(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+
+
+
+                                            <div class="row">
+                                                <div class="col-md-12">                                             
+                                                    <div class="form-group mb-4">
+                                                        {{ form.product2_sales.label(class="form-control-label") }}
+                                                        {{ form.product2_sales(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+
+
+
+                                            <div class="row">
+                                                <div class="col-md-12">                                             
+                                                    <div class="form-group mb-4">
+                                                        {{ form.product2_sales_increase.label(class="form-control-label") }}
+                                                        {{ form.product2_sales_increase(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+
+
+                                            
+                                            
+        
+                                            <button type="submit" name="bp_submit" value="bp_submit" class="btn btn-primary">Сохранить</button>      
+                                        </form>
+                                    </div>
+
+
+                                    
+        
+        
+        
+        
+        
+                            </div>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary btn-lg" style="color:#fff;background-color:#04a9f5;border-color:#04a9f5;height:40px;width:300px;" href="/authorized/bp_constructor/generate" name="bp_submit1" value="bp_submit1" role="button">Сгенерировать БП</a>
+                    
+
+                </div>
+                <!-- [ Main Content ] end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+{% endblock javascripts %}

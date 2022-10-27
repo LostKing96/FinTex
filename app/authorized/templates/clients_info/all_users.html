@@ -1,0 +1,62 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Конструктор БП {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+
+<h1 style="margin-top: 40px;"> Информация обо всех users: </h1>
+
+<form action='' method="post" style="margin:50px">
+  <div class="mb-3">
+    <label for="exampleInputUsername" class="form-label">Username:</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username">
+    <div id="emailHelp" class="form-text">Нужно указать именно по таблице.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputStatus" class="form-label">Введите новый статус:</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name="new-status">
+    <div id="emailHelp" class="form-text">Выберите из ("course-standard", "course-pro", "beginner")</div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        
+        <th scope="col">Username</th>
+
+        <th scope="col">email</th>
+        <th scope="col">Payment_status</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+
+        {% for user in users %}
+        <tr>
+            <th scope="row">{{ user['username'] }}</th>
+          
+            <td>{{ user['email'] }}</td>
+            <td>{{ user['payment_status'] }}</td>
+        
+            
+        </tr>
+        {% endfor %}
+      
+     
+    </tbody>
+  </table>
+  
+  
+
+{% endblock content %}
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+{% endblock javascripts %}

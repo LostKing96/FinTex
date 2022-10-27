@@ -1,0 +1,470 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Конструктор БП {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Конструктор Бизнес Планов</h5>
+                        </div>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="javascript:">Сервисы</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:">Конструктор Бизнес Планов</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- [ Main Content ] start -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h5 class="mt-4">Структура Бизнес Плана</h5>
+                        <hr>
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="false">Общие сведения</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Технологическая составляющая</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Перспективы коммерциализации</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-team-tab" data-toggle="pill" href="#pills-team" role="tab" aria-controls="pills-team" aria-selected="false">Команда</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-realization-tab" data-toggle="pill" href="#pills-realization" role="tab" aria-controls="pills-realization" aria-selected="false">Реализация проекта</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-finances-tab" data-toggle="pill" href="#pills-finances" role="tab" aria-controls="pills-finances" aria-selected="false">Финансовый план</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-conclusion-tab" data-toggle="pill" href="#pills-conclusion" role="tab" aria-controls="pills-conclusion" aria-selected="true">Вывод</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                
+                                        
+                                        
+                                        <form role="form" method="post" action="{{ url_for('authorized_blueprint.general_data_saver') }}">
+                                            {{ form.hidden_tag() }} 
+                                            <div class="row">
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        
+                                                        {{ form.project_name.label(class="form-control-label") }}
+                                                        {{ form.project_name(class="form-control") }}
+                                                                                             
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        {{ form.businessman_name.label(class="form-control-label") }}
+                                                        {{ form.businessman_name(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        {{ form.capital_distribution.label(class="form-control-label") }}
+                                                        {{ form.capital_distribution(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        {{ form.address.label(class="form-control-label") }}
+                                                        {{ form.address(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">                                             
+                                                    <div class="form-group mb-4">
+                                                        {{ form.website.label(class="form-control-label") }}
+                                                        {{ form.website(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        {{ form.self_investment.label(class="form-control-label") }}
+                                                        {{ form.self_investment(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        {{ form.your_product.label(class="form-control-label") }}
+                                                        {{ form.your_product(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">                                            
+                                                    <div class="form-group mb-4">
+                                                        {{ form.start_deadline.label(class="form-control-label") }}
+                                                        {{ form.start_deadline(class="form-control") }}                                         
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                            <button type="submit" name="bp_submit" value="bp_submit" class="btn btn-primary">Сохранить</button>      
+                                        </form>
+        
+        
+        
+        
+        
+        
+        
+                                                
+                                    
+                            </div>
+                            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                <form role="form" method="post" action="{{ url_for('authorized_blueprint.technological_data_saver') }}">
+                                    {{ form.hidden_tag() }} 
+                                    <div class="row">
+                                        <div class="col-md-12">                                            
+                                            <div class="form-group mb-4">
+                                                
+                                                {{ form.problem.label(class="form-control-label") }}
+                                                {{ form.problem(class="form-control") }}                                         
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">                                            
+                                            <div class="form-group mb-4">
+                                                {{ form.solution.label(class="form-control-label") }}
+                                                {{ form.solution(class="form-control") }}                                         
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">                                             
+                                            <div class="form-group mb-4">
+                                                {{ form.innovation.label(class="form-control-label") }}
+                                                {{ form.innovation(class="form-control") }}                                         
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">                                            
+                                            <div class="form-group mb-4">
+                                                {{ form.patents.label(class="form-control-label") }}
+                                                {{ form.patents(class="form-control") }}                                         
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">                                             
+                                            <div class="form-group mb-4">
+                                                {{ form.business_model.label(class="form-control-label") }}
+                                                {{ form.business_model(class="form-control") }}                                         
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">                                            
+                                            <div class="form-group mb-4">
+                                                {{ form.resources.label(class="form-control-label") }}
+                                                {{ form.resources(class="form-control") }}                                         
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <button type="submit" name="bp_submit" value="bp_submit" class="btn btn-primary">Сохранить</button>      
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                <form role="form" method="post" action="{{ url_for('authorized_blueprint.commercialization_data_saver') }}">
+                                    {{ form.hidden_tag() }} 
+                                    <div class="row">
+                                        <div class="col-md-12">                                            
+                                            <div class="form-group mb-4">
+                                                
+                                                {{ form.analysis.label(class="form-control-label") }}
+                                                {{ form.analysis(class="form-control") }}                                         
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">                                            
+                                            <div class="form-group mb-4">
+                                                
+                                                {{ form.competitors.label(class="form-control-label") }}
+                                                {{ form.competitors(class="form-control") }}                                         
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="card-block px-0 py-3">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-dark">
+                                                <tbody>
+                                                    <tr class="unread">
+                                                        <td>Наименование показателей</td>
+                                                        <td>Ваш продукт</td>
+                                                        <td><h6 style="color:white">Конкурент 1</h6>
+                                                            {{ form.competitor1(class="form-control") }}                                        
+                                                        </td>
+                                                        <td><h6 style="color:white">Конкурент 2</h6>
+                                                            {{ form.competitor2(class="form-control") }}                                        
+                                                        </td>
+                                                        <td><h6 style="color:white">Конкурент 3</h6>
+                                                            {{ form.competitor3(class="form-control") }}                                        
+                                                        </td>
+                                                    
+                                                    </tr>
+                                                    <tr class="unread">
+                                                        <td>
+                                                            
+                                                            {{ form.advantage1(class="form-control") }}                                         
+                                                        </td>
+                                                        <td><h6 style="color:white">+</h6></td>
+                                                        <td>{{ form.competitor1value1(class="form-control") }}                                        
+                                                        </td>
+                                                        <td>{{ form.competitor2value1(class="form-control") }}                                        
+                                                        </td>
+                                                        <td>{{ form.competitor3value1(class="form-control") }}                                        
+                                                        </td>
+                                                        
+                                                        </tr>
+                                                        <tr class="unread">
+                                                            <td>
+                                                            
+                                                            {{ form.advantage2(class="form-control") }}                                         
+                                                        </td>
+                                                        <td><h6 style="color:white">+</h6></td>
+                                                        <td>{{ form.competitor1value2(class="form-control") }}                                        
+                                                        </td>
+                                                        <td>{{ form.competitor2value2(class="form-control") }}                                        
+                                                        </td>
+                                                        <td>{{ form.competitor3value2(class="form-control") }}                                        
+                                                        </td>
+                                                        
+                                                        </tr>
+                                                        <tr class="unread">
+                                                            <td>
+                                                            
+                                                            {{ form.advantage3(class="form-control") }}                                         
+                                                        </td>
+                                                        <td><h6 style="color:white">+</h6></td>
+                                                        <td>{{ form.competitor1value3(class="form-control") }}                                        
+                                                        </td>
+                                                        <td>{{ form.competitor2value3(class="form-control") }}                                        
+                                                        </td>
+                                                        <td>{{ form.competitor3value3(class="form-control") }}                                        
+                                                        </td>
+                                                        
+                                                        </tr>
+                                                        <tr class="unread">
+                                                            <td>
+                                                            
+                                                            {{ form.advantage4(class="form-control") }}                                         
+                                                        </td>
+                                                        <td><h6 style="color:white">+</h6></td>
+                                                        <td>{{ form.competitor1value4(class="form-control") }}                                        
+                                                        </td>
+                                                        <td>{{ form.competitor2value4(class="form-control") }}                                        
+                                                        </td>
+                                                        <td>{{ form.competitor3value4(class="form-control") }}                                        
+                                                        </td>
+                                                    
+                                                    
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">                                             
+                                            <div class="form-group mb-4">
+                                                {{ form.strategy.label(class="form-control-label") }}
+                                                {{ form.strategy(class="form-control") }}                                         
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+
+                                    <button type="submit" name="bp_submit" value="bp_submit" class="btn btn-primary">Сохранить</button>      
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="pills-team" role="tabpanel" aria-labelledby="pills-team-tab">
+                                <form role="form" method="post" action="{{ url_for('authorized_blueprint.team_data_saver') }}">
+                                    {{ form.hidden_tag() }} 
+                                    <div class="row">
+                                        <div class="col-md-12">                                            
+                                            <div class="form-group mb-4">
+                                                
+                                                {{ form.team.label(class="form-control-label") }}
+                                                {{ form.team(class="form-control") }}                                         
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">                                            
+                                            <div class="form-group mb-4">
+                                                {{ form.experience.label(class="form-control-label") }}
+                                                {{ form.experience(class="form-control") }}                                         
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">                                             
+                                            <div class="form-group mb-4">
+                                                {{ form.organizational_structure.label(class="form-control-label") }}
+                                                {{ form.organizational_structure(class="form-control") }}                                         
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+
+                                    <button type="submit" name="bp_submit" value="bp_submit" class="btn btn-primary">Сохранить</button>      
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="pills-realization" role="tabpanel" aria-labelledby="pills-realization-tab">
+                                <form role="form" method="post" action="{{ url_for('authorized_blueprint.project_realization_data_saver') }}">
+                                    {{ form.hidden_tag() }} 
+                                    <div class="card-block px-0 py-3">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-dark">
+                                                <tbody>
+                                                    <tr class="unread">
+                                                        
+                                                        <td>
+                                                            {{ form.strength.label(class="form-control-label") }}
+                                                            {{ form.strength(class="form-control") }}                                        
+                                                        </td>
+                                                        <td>
+                                                            {{ form.weakness.label(class="form-control-label") }}
+                                                            {{ form.weakness(class="form-control") }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="unread">
+                                                        <td>
+                                                            {{ form.possibility.label(class="form-control-label") }}
+                                                            {{ form.possibility(class="form-control") }}                                         
+                                                        </td>
+                                                    
+                                                        <td>
+                                                            {{ form.threat.label(class="form-control-label") }}
+                                                            {{ form.threat(class="form-control") }}    
+                                                        </td>
+                                                    
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">                                             
+                                            <div class="form-group mb-4">
+                                                {{ form.realization_plan.label(class="form-control-label") }}
+                                                {{ form.realization_plan(class="form-control") }}                                         
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    
+
+                                    <button type="submit" name="bp_submit" value="bp_submit" class="btn btn-primary">Сохранить</button>      
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="pills-finances" role="tabpanel" aria-labelledby="pills-finances-tab">
+                                <form role="form" method="post" action="{{ url_for('authorized_blueprint.financial_data_saver') }}">
+                                    {{ form.hidden_tag() }} 
+                                    <div class="row">
+                                        <div class="col-md-12">                                            
+                                            <div class="form-group mb-4">
+                                                
+                                                {{ form.investment_before.label(class="form-control-label") }}
+                                                {{ form.investment_before(class="form-control") }}                                         
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">                                            
+                                            <div class="form-group mb-4">
+                                                {{ form.financial_effectivity.label(class="form-control-label") }}
+                                                {{ form.financial_effectivity(class="form-control") }}                                         
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                   
+
+
+                                    <button type="submit" name="bp_submit" value="bp_submit" class="btn btn-primary">Сохранить</button>      
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="pills-conclusion" role="tabpanel" aria-labelledby="pills-conclusion-tab">
+                                <form role="form" method="post" action="{{ url_for('authorized_blueprint.conclusion_data_saver') }}">
+                                    {{ form.hidden_tag() }} 
+                                    <div class="row">
+                                        <div class="col-md-12">                                            
+                                            <div class="form-group mb-4">
+                                                
+                                                {{ form.conclusion.label(class="form-control-label") }}
+                                                {{ form.conclusion(class="form-control") }}                                         
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                   
+
+
+                                    <button type="submit" name="bp_submit" value="bp_submit" class="btn btn-primary">Сохранить</button>      
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary btn-lg" style="color:#fff;background-color:#04a9f5;border-color:#04a9f5;height:40px;width:300px;" href="/authorized/bp_constructor/generate" name="bp_submit1" value="bp_submit1" role="button">Сгенерировать БП</a>
+                    
+
+                </div>
+                <!-- [ Main Content ] end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+{% endblock javascripts %}

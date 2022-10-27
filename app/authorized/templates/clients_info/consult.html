@@ -1,0 +1,52 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Конструктор БП {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<h1 style="text-align:center;margin:4%;">
+    Запросы на консультацию
+</h1>
+
+<!-- 
+     "name": name,
+                "phone_number": phone_number,
+                "question": question
+             -->
+
+
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        
+        <th scope="col">Имя</th>
+        <th scope="col">Номер Телефона</th>
+        <th scope="col">Вопрос</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        {% for client in clients %}
+        <tr>
+            <th scope="row">{{ client["name"] }}</th>
+            <td>{{ client["phone_number"] }}</td>
+            <td>{{ client["question"] }}</td>
+            
+        </tr>
+
+        {% endfor %}
+      
+     
+    </tbody>
+  </table>
+{% endblock content %}
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+{% endblock javascripts %}

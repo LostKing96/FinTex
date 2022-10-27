@@ -1,0 +1,50 @@
+<style> 
+    .top-bar-mobile { 
+      display: none; 
+      position: fixed; 
+      left: 0; 
+      top: 0; 
+      width: 100%; 
+      background: white; 
+      z-index: 99; 
+    } 
+   
+    .top-bar-mobile button { 
+      border: none; 
+      border-radius: 5px; 
+      background: #3f4d67; 
+      color: white; 
+    } 
+   
+    @media (max-width: 990px) { 
+      .top-bar-mobile { 
+        display: flex; 
+        justify-content: flex-start; 
+        padding: 15px; 
+        left: 0; 
+        top: 0; 
+        width: 100%; 
+      } 
+      .pcoded-content { 
+        margin-top: 35px !important; 
+      } 
+    } ; 
+  </style> 
+   
+  <div class="top-bar-mobile"> 
+    <button onclick="openSide()">Меню</button> 
+  </div> 
+   
+  <script> 
+    let opened = false; 
+    function openSide() { 
+      const sidebar = document.getElementsByClassName("pcoded-navbar")[0]; 
+      if (opened) { 
+        sidebar.style.marginLeft = "-264px"; 
+        opened = false; 
+      } else { 
+        sidebar.style.marginLeft = "0px"; 
+        opened = true; 
+      } 
+    } 
+  </script>

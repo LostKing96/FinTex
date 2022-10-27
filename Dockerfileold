@@ -1,0 +1,22 @@
+FROM python:3.9.1-slim-buster
+
+ENV WORKDIR=/usr/src/app
+ENV USER=app
+ENV FLASK_APP run.py
+ENV APP_HOME=/home/app/web
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+
+WORKDIR $WORKDIR
+
+RUN pip install --upgrade pip
+COPY run.py requirements.txt config.py ./
+COPY app app
+RUN pip install -r requirements.txt
+
+RUN adduser --system --group $USER
+RUN mkdir $APP_HOME
+WORKDIR $APP_HOME
+
+COPY . $APP_HOME
+RUN chown -R $USER:$USER $APP_HOME
+USER $USER

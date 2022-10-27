@@ -1,0 +1,37 @@
+{% extends "layouts/base_grant.html" %}
+{% block content %}
+    <div class="content" style="display:flex;flex-direction:column;justify-content:center;align-items:center;padding:15px;margin:0 auto;">
+    
+        <img src="/static/assets/images/person.png" alt="Айжан Аймбетова" style="width:128px;height:128px;border-radius:50%;">
+        <h4>aimaizhan</h4>
+        <p></p>
+        <h4>Консультация по грантам</h4>
+        <p></p>
+        <p style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:black;">Хотите узнать все про гранты? Подходит ли именно ваша идея на грант? За 30 минут вы узнаете все!</p>
+
+        <p></p>
+        <p style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:black;">Консультация (30 минут) - 40 000 тг.</p>
+        <p style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:red;">{{message}}</p>
+        <form role="form" method="post" action="">
+            {{ form.hidden_tag() }}
+            <div class="input-group mb-3">
+                {{ form.name(placeholder="Ваше имя", class="form-control") }}
+            </div>
+            
+            <div class="input-group mb-4">
+                {{ form.phone_number(placeholder="Номер телефона", class="form-control") }}
+            </div> 
+            <div class="input-group mb-4">
+                {{ form.phone_number_again(placeholder="Повторите номер телефона", class="form-control") }}
+            </div> 
+            <div class="input-group mb-4">
+                {{ form.question(placeholder="Ваш запрос", class="form-control") }}
+            </div>                                       
+        
+        <button type="submit" class="btn btn-primary" style="color:#fff;background-color:#04a9f5;border-color:#04a9f5;">Подать заявку</button>
+    </form>
+       
+    </div>
+    {% endblock content %}
+   
+    

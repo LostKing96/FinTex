@@ -1,0 +1,208 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Page Blank {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+            <!-- [ breadcrumb ] start -->
+            <div class="page-header">
+                <div class="page-block">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="page-header-title">
+                                <h5 class="m-b-10">Курс ДКБ 2025</h5>
+                            </div>
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="javascript:">3 урок</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- [ breadcrumb ] end -->
+            <div class="main-body">
+                <div class="page-wrapper">
+                    <!-- [ Main Content ] start -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card justify-content-center">
+                                <div class="card-header">
+                                    <h3>Урок 3. Как составить бизнес-план? Часть 2</h3>
+                                    <h5>
+                                        На третьем уроке мы продолжаем изучение Бизнес-плана. Мы изучим какой анализ нужен для написания Бизнес-плана, пройдемся по всем пунктам структуры и изучим шаблон Бизнес-плана. 
+                                        </h5>
+                                </div>
+                                <div class="ratio ratio-16x9 videoWrapper">
+                                    <iframe style="display: block; margin: 0 auto;" width="560" height="315" src="https://www.youtube.com/embed/nA9ciqLBg1Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                  </div>
+                            </div>
+                            <!-- Button trigger modal -->
+                            {% if not checked_rating %}
+                                <button id="myBtn" type="button" class="btn btn-primary" style="float: right;">Следующий урок</button>
+                            {% else %}
+                                <form action="" method="post">
+                                <button id="justBtn" type="submit" class="btn btn-primary" style="float: right;">Следующий урок</button>
+                                </form>
+                            {% endif %}
+                        </div>
+                        <h5 class="mb-3" style="color:red;">{{ message }}</h5>
+                        <div class="col-sm-12">
+                            <h5 class="mb-3">Домашнее задание нужно отправлять на почту admin@fintex.kz</h5>
+                            <h6 class="mb-3">В теме письма укажите, пожалуйста, по какому уроку это домашнее задание</h6>
+                            <div class="accordion" id="accordionExample">
+                                <div class="card justify-content-center">
+                                    <div class="card-header" id="headingOne">
+                                        <h5><a href="#!" class="collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Шаблон анализа конкурентов</a></h5>
+                                    </div>
+                                    <div id="collapseOne" class="collapse card-body" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <div class="card-block">
+                                            <a target="_blank" rel="noopener" class="btn btn-primary" href="https://docs.google.com/spreadsheets/d/1x_XR9VuVV_ecRtxgtVSseqxy1csyCbjq/edit?usp=sharing&ouid=108708311567074900845&rtpof=true&sd=true" style="display:flex;flex-direction:column;justify-content:center;align-items:center;">Посмотреть в Google Drive</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                        <div class="col-sm-12">
+                            <div class="accordion" id="accordionExample1">
+                                <div class="card justify-content-center">
+                                    <div class="card-header" id="headingOne1">
+                                        <h5><a href="#!" class="collapsed" data-toggle="collapse" data-target="#collapseOne1" aria-expanded="false" aria-controls="collapseOne1">Шаблон бизнес плана</a></h5>
+                                    </div>
+                                    <div id="collapseOne1" class="collapse card-body" aria-labelledby="headingOne1" data-parent="#accordionExample1">
+                                        <div class="card-block">
+                                            <a target="_blank" rel="noopener" class="btn btn-primary" href="https://docs.google.com/document/d/1E8s2G4q0Taf0CeHyjt_ai8aOy2ETzo_2/edit?usp=sharing&ouid=108708311567074900845&rtpof=true&sd=true" style="display:flex;flex-direction:column;justify-content:center;align-items:center;">Посмотреть в Google Drive</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="accordion" id="accordionExample2">
+                                <div class="card justify-content-center">
+                                    <div class="card-header" id="headingOne2">
+                                        <h5><a href="#!" class="collapsed" data-toggle="collapse" data-target="#collapseOne2" aria-expanded="false" aria-controls="collapseOne2">Шаблон SWOT анализа</a></h5>
+                                    </div>
+                                    <div id="collapseOne2" class="collapse card-body" aria-labelledby="headingOne2" data-parent="#accordionExample2">
+                                        <div class="card-block">
+                                            <a target="_blank" rel="noopener" class="btn btn-primary" href="https://docs.google.com/document/d/1i39C_sxGJReJPLmSM1jNnJP0YF592Vos/edit?usp=sharing&ouid=108708311567074900845&rtpof=true&sd=true" style="display:flex;flex-direction:column;justify-content:center;align-items:center;">Посмотреть в Google Drive</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-12">
+                            <div class="accordion" id="accordionExample5">
+                                <div class="card justify-content-center">
+                                    <div class="card-header" id="headingOne5">
+                                        <h5><a href="#!" class="collapsed" data-toggle="collapse" data-target="#collapseOne5" aria-expanded="false" aria-controls="collapseOne5">Пример бизнес плана - Юр. услуги</a></h5>
+                                    </div>
+                                    <div id="collapseOne5" class="collapse card-body" aria-labelledby="headingOne5" data-parent="#accordionExample5">
+                                        
+                                        <div class="card-block">
+                                            <a target="_blank" rel="noopener" class="btn btn-primary" href="https://docs.google.com/document/d/19SdjgO12V5ViTBo0P14DGrotmte5iIpo/edit?usp=sharing&ouid=108708311567074900845&rtpof=true&sd=true" style="display:flex;flex-direction:column;justify-content:center;align-items:center;">Посмотреть в Google Drive</a>
+                                        </div>
+                                        <div class="card-block">
+                                            <embed src="static/bp-legal.pdf" width="900" height="500">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="accordion" id="accordionExample6">
+                                <div class="card justify-content-center">
+                                    <div class="card-header" id="headingOne6">
+                                        <h5><a href="#!" class="collapsed" data-toggle="collapse" data-target="#collapseOne6" aria-expanded="false" aria-controls="collapseOne6">Пример бизнес плана - Доставка питания</a></h5>
+                                    </div>
+                                    <div id="collapseOne6" class="collapse card-body" aria-labelledby="headingOne6" data-parent="#accordionExample6">
+                                        
+                                        <div class="card-block">
+                                            <a target="_blank" rel="noopener" class="btn btn-primary" href="https://drive.google.com/file/d/1KLbfweGjWAno2SWeEux6sD4WoExtW0bb/view?usp=sharing" style="display:flex;flex-direction:column;justify-content:center;align-items:center;">Посмотреть в Google Drive</a>
+                                        </div>
+                                        <div class="card-block">
+                                            <embed src="static/bp-food-delivery.pdf" width="900" height="500">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="accordion" id="accordionExample4">
+                                <div class="card justify-content-center">
+                                    <div class="card-header" id="headingOne4">
+                                        <h5><a href="#!" class="collapsed" data-toggle="collapse" data-target="#collapseOne4" aria-expanded="false" aria-controls="collapseOne4">Список бизнес моделей</a></h5>
+                                    </div>
+                                    <div id="collapseOne4" class="collapse card-body" aria-labelledby="headingOne4" data-parent="#accordionExample4">
+                                        <div class="card-block">
+                                            <a target="_blank" rel="noopener" class="btn btn-primary" href="https://docs.google.com/document/d/132B5yN1fq-CLiervY8MI-gM-2cjHDyx98W6MhjMLu98/edit?usp=sharing" style="display:flex;flex-direction:column;justify-content:center;align-items:center;">Посмотреть в Google Drive</a>
+                                        </div>
+                                        <div class="card-block">
+                                            <embed src="static/business-models.pdf" width="900" height="500">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!-- [ Main Content ] end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL -->
+    <div id="myModal" class="modal">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+             <form action="" method="post"  >
+                <div class="modal-header">
+                    <h5 class="modal-title">Оцени урок</h5>
+                    <button type="button" class="close" style="color: rgb(10, 8, 8);float: right; font-size: 28px; font-weight: bold;" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+                <div class="modal-body" >
+                <!-- FORM here and post request and then we will need
+                    to add possible post function to our document option 
+                        and it will be saved
+                    -->
+                        <label class="modal-text-lbl " for="option-1">Отлично!</label>
+                        <input class="modal-check" name="perfect"  type="checkbox" id="option-1"> 
+                        <p></p>
+                        <label class="modal-text-lbl " for="option-2">Очень хорошо!</label>
+                        <input class="modal-check" name="good" type="checkbox" id="option-2" > 
+                        <p></p>
+                        <label class="modal-text-lbl " for="option-3">Нормально</label>
+                        <input class="modal-check" name="normal" type="checkbox" id="option-3" >
+                        <p></p> 
+                        <label class="modal-text-lbl " for="option-4">Не очень хорошо</label>
+                        <input class="modal-check" name="notgood" type="checkbox" id="option-4" >
+                        <p></p> 
+                        <label class="modal-text-lbl " for="option-5">Плохо</label>
+                        <input class="modal-check" name="bad"  type="checkbox" id="option-5" > 
+                        <p class="modal-p">Ваши пожелания комментарии к уроку:</p>
+                        <!-- <labHoel class="modal-text-label " for="bad">Ваши пожелания комментарии к уроку:</label> -->
+                        <!-- <input class="modal-comments" type="text"> -->
+                        <!-- <span class="textarea" name="modal-comment" role="textbox" contenteditable></span> -->
+                        <input class="textarea" type="text" name="modal-comment">
+                
+                </div>
+               
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" >Перейти к следующему уроку</button>
+                    </div>
+                   
+            </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

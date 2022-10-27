@@ -1,0 +1,111 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Page Blank {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+            <!-- [ breadcrumb ] start -->
+            <div class="page-header">
+                <div class="page-block">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="page-header-title">
+                                <h5 class="m-b-10">Курс ДКБ 2025</h5>
+                            </div>
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="javascript:">8 урок</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- [ breadcrumb ] end -->
+            <div class="main-body">
+                <div class="page-wrapper">
+                    <!-- [ Main Content ] start -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card justify-content-center">
+                                <div class="card-header">
+                                    <h3>Урок 0. Введение в курс</h3>
+                                    <h5>
+                                        Небольшое введение в цели курса, его контент и ожидаемые результаты.
+                                        </h5>
+                                </div>
+                                <div class="ratio ratio-16x9 videoWrapper">
+                                    <iframe style="display: block; margin: 0 auto;" width="560" height="315" src="https://www.youtube.com/embed/K78w_4VzvCU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                  </div>
+                            </div>
+                            <!-- Button trigger modal -->
+                            {% if not checked_rating %}
+                                <button id="myBtn" type="button" class="btn btn-primary" style="float: right;">Следующий урок</button>
+                            {% else %}
+                                <form action="" method="post">
+                                 <button id="justBtn" type="submit" class="btn btn-primary" style="float: right;">Следующий урок</button>
+                                </form>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                    <h5 class="mb-3" style="color:red;">{{ message }}</h5>
+                    <!-- [ Main Content ] end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL -->
+    <div id="myModal" class="modal">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+             <form action="" method="post"  >
+                <div class="modal-header">
+                    <h5 class="modal-title">Оцени урок</h5>
+                    <button type="button" class="close" style="color: rgb(10, 8, 8);float: right; font-size: 28px; font-weight: bold;" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+                <div class="modal-body" >
+                <!-- FORM here and post request and then we will need
+                    to add possible post function to our document option 
+                        and it will be saved
+                    -->
+                        <label class="modal-text-lbl " for="option-1">Отлично!</label>
+                        <input class="modal-check" name="perfect"  type="checkbox" id="option-1"> 
+                        <p></p>
+                        <label class="modal-text-lbl " for="option-2">Очень хорошо!</label>
+                        <input class="modal-check" name="good" type="checkbox" id="option-2" > 
+                        <p></p>
+                        <label class="modal-text-lbl " for="option-3">Нормально</label>
+                        <input class="modal-check" name="normal" type="checkbox" id="option-3" >
+                        <p></p> 
+                        <label class="modal-text-lbl " for="option-4">Не очень хорошо</label>
+                        <input class="modal-check" name="notgood" type="checkbox" id="option-4" >
+                        <p></p> 
+                        <label class="modal-text-lbl " for="option-5">Плохо</label>
+                        <input class="modal-check" name="bad"  type="checkbox" id="option-5" > 
+                        <p class="modal-p">Ваши пожелания комментарии к уроку:</p>
+                        <!-- <labHoel class="modal-text-label " for="bad">Ваши пожелания комментарии к уроку:</label> -->
+                        <!-- <input class="modal-comments" type="text"> -->
+                        <!-- <span class="textarea" name="modal-comment" role="textbox" contenteditable></span> -->
+                        <input class="textarea" type="text" name="modal-comment">
+                
+                </div>
+               
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" >Перейти к следующему уроку</button>
+                    </div>
+                   
+            </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
