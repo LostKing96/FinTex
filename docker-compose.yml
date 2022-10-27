@@ -26,21 +26,20 @@ services:
     image: mongo
     volumes:
       - '/Volumes/FinTEx_Super_Platform/:/data/db/'
-  mongo-express:
-    restart: always
-    image: mongo-express
-  environment:
-    - ME_CONFIG_MONGODB_SERVER=database
-    - ME_CONFIG_MONGODB_PORT=27017
-    - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
-    - ME_CONFIG_MONGODB_AUTH_DATABASE=AGF
-    - ME_CONFIG_BASICAUTH_USERNAME=admin
-    - ME_CONFIG_BASICAUTH_PASSWORD=fintex_unicorn
-  links:
-    - database
-  logging:
-    driver: json-file
-    options:
-      max-size: 1m
-      max-file: '10'
-
+mongo-express:
+  restart: always
+  image: mongo-express
+environment:
+  - ME_CONFIG_MONGODB_SERVER=database
+  - ME_CONFIG_MONGODB_PORT=27017
+  - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
+  - ME_CONFIG_MONGODB_AUTH_DATABASE=AGF
+  - ME_CONFIG_BASICAUTH_USERNAME=admin
+  - ME_CONFIG_BASICAUTH_PASSWORD=fintex_unicorn
+links:
+  - database
+logging:
+  driver: json-file
+  options:
+    max-size: 1m
+    max-file: '10'
