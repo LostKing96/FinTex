@@ -3,14 +3,14 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
-from flask_wtf import FlaskForm, Form
+from flask_wtf import FlaskForm, Form, validators
 from wtforms.fields import StringField, PasswordField
-from wtforms.validators import InputRequired, Email, DataRequired
+from wtforms.validators import InputRequired, Email, DataRequired,regexp
 
 ## login and registration
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', id='username_login'   , validators=[DataRequired()])
+    username = StringField('Username', id='username_login'   , validators=[DataRequired(),])
     password = PasswordField('Password', id='pwd_login'        , validators=[DataRequired()])
 
 class ResetPasswordForm(FlaskForm):

@@ -127,6 +127,7 @@ def login():
     if request.method == "POST":
         if 'login' in request.form:
             # read form data
+
             username = request.form['username']
             password = request.form['password']
 
@@ -175,6 +176,7 @@ def register():
     if 'register' in request.form:
 
         username = request.form['username']
+        username = username.strip()
         email = request.form['email']
         password = request.form['password']
 

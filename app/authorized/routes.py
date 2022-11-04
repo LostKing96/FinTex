@@ -169,9 +169,6 @@ def route_lesson(number):
                     rating = "notgood"
                 if request.form.get("bad"):
                     rating = "bad"
-                if not rating:
-                    mes_rating = "Вы должны поставить хотя бы рейтинг уроку, чтобы перейти к следующему!"
-                    return render_template(f"dkb-lessons/"+ number+"_lesson.html", checked_rating=False, message=mes_rating)
                 comment = request.form["modal-comment"]
                 feedbacks_dictionary = user_feedbacks["lessons_feedbacks"] 
                 # adding new lesson value to the dictionary
@@ -194,9 +191,7 @@ def route_lesson(number):
                 rating = "notgood"
             if request.form.get("bad"):
                 rating = "bad"
-            if rating == None:
-                mes_rating = "Вы должны поставить хотя бы рейтинг уроку, чтобы перейти к следующему!"
-                return render_template(f"dkb-lessons/"+ number+"_lesson.html", checked_rating=False, message=mes_rating)
+
             comment = request.form["modal-comment"]
             print("CREATING NEW FEEDBACK!!\n\n")
             feedback_info = {
@@ -977,7 +972,15 @@ def bp_constructor(action):
 # def add_field():
 #     pass
 
-
+def is_digit(string):
+    if string.isdigit():
+       return True
+    else:
+        try:
+            float(string)
+            return True
+        except ValueError:
+            return False
 
 @authorized.route('/initial_investments_data_saver', methods=['POST'])
 @login_required
@@ -1043,7 +1046,10 @@ def initial_investments_data_saver():
     initial_investments_dict = db.get_one(db.user_fm, "username", username)['initial_investments']
     sum = 0
     for value in initial_investments_dict.values():
-        sum += int(value)
+        if not is_digit(value):
+            sum += int(0)
+        else:
+            sum += int(value)
     db.user_fm.update_one({"username": username}, {"$set": {"initial_investments_sum": sum}})
     return render_template('fm_constructor.html', form = fm_form)
 
@@ -1116,7 +1122,10 @@ def salaries_data_saver():
     salaries_dict = db.get_one(db.user_fm, "username", username)['salaries']
     sum = 0
     for value in salaries_dict.values():
-        sum += int(value)
+        if not is_digit(value):
+            sum += int(0)
+        else:
+            sum += int(value)
     db.user_fm.update_one({"username": username}, {"$set": {"salaries_sum": sum}})
     return render_template('fm_constructor.html', form = fm_form)
 
@@ -1191,7 +1200,10 @@ def permanent_expenditures_data_saver():
     permanent_expenditures_dict = db.get_one(db.user_fm, "username", username)['permanent_expenditures']
     sum = 0
     for value in permanent_expenditures_dict.values():
-        sum += int(value)
+        if not is_digit(value):
+            sum += int(0)
+        else:
+            sum += int(value)
     db.user_fm.update_one({"username": username}, {"$set": {"permanent_expenditures_sum": sum}})
     return render_template('fm_constructor.html', form = fm_form)
 
@@ -1323,12 +1335,18 @@ def variable_expenditures_data_saver():
     variable_expenditure2_dict = db.get_one(db.user_fm, "username", username)['variable_expenditure2']
     sum1 = 0
     for value in variable_expenditure1_dict.values():
-        sum1 += int(value)
+        if not is_digit(value):
+            sum1 += int(0)
+        else:
+            sum1 += int(value)
     db.user_fm.update_one({"username": username}, {"$set": {"variable_expenditure1_sum": sum1}})
 
     sum2 = 0
     for value in variable_expenditure2_dict.values():
-        sum2 += int(value)
+        if not is_digit(value):
+            sum2 += int(0)
+        else:
+            sum2 += int(value)
     db.user_fm.update_one({"username": username}, {"$set": {"variable_expenditure2_sum": sum1}})
     return render_template('fm_constructor.html', form = fm_form)
 
